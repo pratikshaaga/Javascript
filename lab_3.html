@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p> The total is </p>
+
+<p id="totalId"></p> 
+
+<p> The amount of money the user has earned each month in interest </p>
+<p id="accruedId"></p> 
+
+
+<script>
+function myFunction(text) {
+  input = null;
+
+  while (input == null) {
+    var input = prompt(text); 
+    if (input != null) {
+      return input;
+    }
+  }
+};
+
+function display(text, id){
+   
+    document.getElementById(id).innerHTML = text.toString();
+
+};
+
+
+const text1 = "Enter the interest rate: ";
+const text2 = "Enter the amount of money invested: ";
+const text3 =  "Enter the term in months: ";
+
+let interestRate = myFunction(text1)
+let moneyInvested = myFunction(text2)
+let term = myFunction(text3)
+
+const accrued = interestRate + moneyInvested;
+const total = moneyInvested + (interestRate * moneyInvested);
+
+
+
+display(accrued, "accruedId");
+display(total, "totalId");
+
+
+</script>
+
+</body>
+</html>
